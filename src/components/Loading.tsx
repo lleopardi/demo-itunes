@@ -1,5 +1,5 @@
 import React from "react";
-import "./Loading.css";
+import "./Loading.scss";
 import { useNavigation } from "react-router-dom";
 
 const Loading = () => {

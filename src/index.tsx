@@ -7,7 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import App from "./views/App";
-import "./index.css";
+import "./index.scss";
 import Home from "./views/Home";
 import Podcast from "./views/Podcast";
 import getEpisodesByPodcastId from "./services/episodes.service";
