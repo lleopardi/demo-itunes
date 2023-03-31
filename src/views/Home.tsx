@@ -3,6 +3,7 @@ import "./Home.scss";
 import CardPodcast from "../components/CardPodcast";
 import { Podcast } from "../models/podcast";
 import getPodcasts from "../services/podcast.service";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [podcasts, setPodcasts] = useState<Podcast[]>([]);
@@ -41,9 +42,9 @@ const Home = () => {
       <div className="podcast-list">
         {filtered.map((podcast, index) => {
           return (
-          // <Link to={`podcast/${podcast.id}`} state={podcast}>
+          <Link to={`podcast/${podcast.id}`} state={podcast}>
             <CardPodcast podcast={podcast} key={index}></CardPodcast>
-          // </Link>
+          </Link>
           );
         })}
       </div>

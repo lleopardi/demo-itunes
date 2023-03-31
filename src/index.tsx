@@ -9,11 +9,14 @@ import {
 import App from "./views/App";
 import "./index.css";
 import Home from "./views/Home";
+import Podcast from "./views/Podcast";
+import getEpisodesByPodcastId from "./services/episodes.service";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index element={<Home />}></Route>
+      <Route path="podcast/:id" element={<Podcast />} loader={getEpisodesByPodcastId}></Route>
     </Route>
   )
 );
