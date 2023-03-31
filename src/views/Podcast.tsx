@@ -65,12 +65,12 @@ const Podcast = () => {
                 {episodes.map((episode: Episode) => (
                   <tr>
                     <td>
-                      {/* <Link
+                      <Link
                         to={`episode/${episode.id}`}
                         state={{ episode, podcast }}
-                      > */}
+                      >
                         {episode.title}
-                      {/* </Link> */}
+                      </Link>
                     </td>
                     <td>{episode.date}</td>
                     <td>{episode.duration}</td>
