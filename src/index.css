@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+}
+
+:root{
+  --primary: rgb(220, 216, 216);
+  --secondary: rgb(46, 120, 185);
+}
