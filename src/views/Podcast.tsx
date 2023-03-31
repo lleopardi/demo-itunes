@@ -35,7 +35,7 @@ const Podcast = () => {
               </thead>
               <tbody className="table__body">
                 {episodes.map((episode: Episode) => (
-                  <tr>
+                  <tr key={episode.id}>
                     <td>
                       <Link
                         to={`episode/${episode.id}`}

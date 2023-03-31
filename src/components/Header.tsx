@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Header.scss'
 import Loading from './Loading'
 
@@ -10,7 +11,7 @@ const Header = ({title}: Props) => {
   return (
     <header>
         <nav>
-            <a href='/'>{title}</a>
+            <Link to={'/'}> {title} </Link>
         </nav>
             <Loading></Loading>
     </header>

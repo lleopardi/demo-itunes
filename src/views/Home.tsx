@@ -42,8 +42,8 @@ const Home = () => {
       <div className="podcast-list">
         {filtered.map((podcast, index) => {
           return (
-          <Link to={`podcast/${podcast.id}`} state={podcast}>
-            <CardPodcast podcast={podcast} key={index}></CardPodcast>
+          <Link to={`podcast/${podcast.id}`} state={podcast} key={podcast.id}>
+            <CardPodcast podcast={podcast} key={podcast.id}></CardPodcast>
           </Link>
           );
         })}
