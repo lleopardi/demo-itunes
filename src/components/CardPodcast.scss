@@ -10,6 +10,11 @@
     padding: 10px;
     gap: 5px;
 
+    &__title{
+        color: black;
+        font-size: small;
+    }
+
     &__image-container {
         height: 40px;
         width: 100%;
