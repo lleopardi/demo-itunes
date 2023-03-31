@@ -1,0 +1,39 @@
+.card-cover__container {
+    display: flex;
+    justify-content: center;
+}
+
+.card-cover__image {
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.card-cover__info {
+    border-top: 1px solid rgb(213, 208, 208);
+    border-bottom: 1px solid rgb(213, 208, 208);
+    margin-top: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+}
+
+.card-cover__title {
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.card-cover__author {
+    font-size: small;
+    margin: 10px;
+    font-style: italic;
+}
+
+.card-cover__description-title{
+    font-weight: bold;
+    font-size: medium;
+}
+
+.card-cover__description-content{
+    font-size: small;
+    font-style: italic;
+}

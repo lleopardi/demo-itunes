@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Card from "../components/Card";
+import CardCover from "../components/CardCover";
 import "./Episode.scss";
 
 const Episode = () => {
@@ -20,30 +21,7 @@ const Episode = () => {
   return (
     <section className="episode-layout">
       <div>
-        <Card>
-          <div className="card-cover">
-            <div className="card-cover__container">
-              <img
-                onClick={backAction}
-                className="card-cover__image"
-                src={podcast.image}
-                alt=""
-              />
-            </div>
-            <div className="card-cover__info">
-              <p className="card-cover__title" onClick={backAction}>
-                {podcast.title}
-              </p>
-              <span className="card-cover__author">by: {podcast.author}</span>
-            </div>
-            <div className="card-cover__description">
-              <p className="card-cover__description-title">Description:</p>
-              <p className="card-cover__description-content">
-                {podcast.description}
-              </p>
-            </div>
-          </div>
-        </Card>
+        <CardCover podcast={podcast}></CardCover>
       </div>
       <div className="">
         <Card>
