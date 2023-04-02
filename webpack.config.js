@@ -1,34 +1,44 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-module.exports = {
-  mode: 'development',
-  entry: path.resolve(__dirname, 'src', 'index.tsx'),
+const config = {
+  mode: "development",
+  entry: path.resolve(__dirname, "src", "index.tsx"),
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: '[name].js',
-    clean: true
+    path: path.resolve(__dirname, "dist"),
+    filename: "[name].[contenthash].js",
   },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(js|jsx)$/,
+        use: "babel-loader",
         exclude: /node_modules/,
-        loader: 'ts-loader'
       },
       {
-        test: /\.(sa|sc|c)ss$/, // styles files
-        use: ["style-loader", "css-loader", "sass-loader"],
+        test: /\.ts(x)?$/,
+        loader: "ts-loader",
+        exclude: /node_modules/,
       },
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/, // to import images and fonts
-        loader: "url-loader",
-        options: { limit: false },
+        test: /\.scss$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
-    ]
+    ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({ template: path.resolve(__dirname, "index.html") }),
+    new MiniCssExtractPlugin(),
+    new CleanWebpackPlugin(),
+  ],
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ],
+    extensions: [".tsx", ".ts", ".js"],
   },
-  plugins: [new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'index.html') })]
+  devServer: {
+    historyApiFallback: true
+  }
 };
+
+module.exports = config;
