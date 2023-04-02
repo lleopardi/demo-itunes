@@ -1,7 +1,9 @@
-import { LoaderFunctionArgs } from "react-router-dom";
+import { API_EPISODES, DAY_IN_MILLISECONDS, PROXY_URL, StorageKeys } from "./constants";
+
 import { Episode } from "../models/episode";
 import { EpisodesResponse } from "../models/episodes.response";
-import { DAY_IN_MILLISECONDS, PROXY_URL, StorageKeys } from "./constants";
+import { Http } from "./http";
+import { LoaderFunctionArgs } from "react-router-dom";
 
 const validateExpired = (
   now: number,
@@ -18,17 +20,17 @@ const getEpisodesByPodcastId = async ({ params }: LoaderFunctionArgs) => {
   const cacheEpisodes = JSON.parse(
     localStorage.getItem(StorageKeys.details) || "{}"
   );
+
   const now = Date.now();
   const isExpired = validateExpired(now, podcastId, cacheEpisodes);
-
+  
   if (!isExpired) {
     const episodes: Episode[] = cacheEpisodes[podcastId].episodes;
     return { episodes };
   } else {
-    const api = `https://itunes.apple.com/lookup?id=${podcastId}&entity=podcastEpisode&limit=100`;
-    const response = await fetch(PROXY_URL + api);
+    const api = `${API_EPISODES}id=${podcastId}&entity=podcastEpisode&limit=100`;
+    const data = await Http.get<EpisodesResponse>(api)
 
-    const data: EpisodesResponse = await response.json();
     const episodes: Episode[] = [];
 
     data.results.forEach((item) => {
