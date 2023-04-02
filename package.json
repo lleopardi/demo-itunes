@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://lleopardi.github.io/demo-itunes",
   "scripts": {
     "build": "webpack --mode=production",
     "build:debug": "webpack --mode=development",
@@ -13,7 +14,7 @@
     "test:coverage": "jest --coverage",
     "type-check": "tsc --noEmit",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
