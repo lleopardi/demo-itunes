@@ -1,22 +1,18 @@
-import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import "./Episode.scss";
+
 import Card from "../components/Card";
 import CardCover from "../components/CardCover";
-import "./Episode.scss";
+import React from "react";
+import { useLocation } from "react-router-dom";
 
 const Episode = () => {
   const { state } = useLocation();
   const { episode, podcast } = state;
-  const navigation = useNavigate();
 
   const htmlDescription = episode.description.replace(
     /(https?:\/\/[^\s]+)/g,
     '<a href="$1">$1</a>'
-  );
-
-  const backAction = () => {
-    navigation(-1);
-  };
+  );  
 
   return (
     <section className="episode-layout">

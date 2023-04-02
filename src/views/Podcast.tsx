@@ -1,13 +1,15 @@
-import React from "react";
+import "./Podcast.scss";
+
 import {
   Link,
   useLoaderData,
   useLocation,
 } from "react-router-dom";
+
 import Card from "../components/Card";
 import CardCover from "../components/CardCover";
 import { Episode } from "../models/episode";
-import "./Podcast.scss";
+import React from "react";
 
 const Podcast = () => {
   // @ts-ignore

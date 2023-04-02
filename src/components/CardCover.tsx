@@ -1,8 +1,9 @@
+import "./CardCover.scss";
+
+import Card from "./Card";
+import { Podcast } from "../models/podcast";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Podcast } from "../models/podcast";
-import Card from "./Card";
-import "./CardCover.scss";
 
 interface Props {
   podcast: Podcast;
@@ -13,6 +14,7 @@ const CardCover = ({ podcast }: Props) => {
   const backAction = () => {
     navigation(-1);
   };
+  
   return (
     <Card>
       <div className="card-cover">

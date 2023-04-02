@@ -14,13 +14,12 @@ export class Episode {
     this.date = new Date(response.releaseDate).toLocaleDateString();
     this.id = response.trackId;
     this.episodeUrl = response.episodeUrl;
-    this.description = response.description  
+    this.description = response.description;
   }
 
   getDuration(milliseconds: number) {
-      const minutes = Math.floor(milliseconds / 60000);
-      const seconds = +((milliseconds % 60000) / 1000).toFixed(0);
-      return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-    
+    const minutes = Math.floor(milliseconds / 60000);
+    const seconds = +((milliseconds % 60000) / 1000).toFixed(0);
+    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
   }
 }

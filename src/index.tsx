@@ -1,17 +1,19 @@
+import "./index.scss";
+
 import React, { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
 import {
-  createBrowserRouter,
-  createRoutesFromElements,
   Route,
   RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
 } from "react-router-dom";
+
 import App from "./views/App";
-import "./index.scss";
+import Episode from "./views/Episode";
 import Home from "./views/Home";
 import Podcast from "./views/Podcast";
+import { createRoot } from "react-dom/client";
 import getEpisodesByPodcastId from "./services/episodes.service";
-import Episode from "./views/Episode";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
