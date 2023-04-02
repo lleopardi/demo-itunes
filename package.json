@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://lleopardi.github.io/demo-itunes",
+  "homepage": "https://lleopardi.github.io/itunes-demo",
   "scripts": {
     "build": "webpack --mode=production",
     "build:debug": "webpack --mode=development",
