@@ -3,11 +3,12 @@ export class Http {
     try {
       const response = await fetch(url);
       if (!response.ok) {
-        console.error("Error: ", response.statusText);
+        console.error("Error: ", response);
       }
       const data: Type = await response.json();
       return data;
     } catch (error) {
+        console.error(error)
         return Promise.reject();
     }
   }
