@@ -37,7 +37,8 @@ const config = {
     extensions: [".tsx", ".ts", ".js"],
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    port: 9080,
   }
 };
 
